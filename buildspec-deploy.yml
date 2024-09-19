@@ -21,6 +21,7 @@ phases:
       #- export AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY
       #- export AWS_DEFAULT_REGION=$REGION
       #- export AWS_DEFAULT_OUTPUT="json"
+      - chmod +x ./scripts/setup_k8s_tools.sh
       - ./scripts/setup_k8s_tools.sh
 
   pre_build:
