@@ -1,18 +1,5 @@
 version: 0.2
 
-#env:
-#  variables:
-#    REPOSITORY_PREFIX: ardhmd
-#    REPOSITORY_URI: ardhmd/spring-petclinic-cloud-api-gateway
-#    TAG: latest
-#    ARCH: amd64
-#
-#  parameter-store:
-#    CLUSTER_NAME: PETCLINIC_EKS_CLUSTER_NAME
-#    ACCESS_KEY_ID: ACCESS_KEY_ID
-#    SECRET_ACCESS_KEY: SECRET_ACCESS_KEY
-#    REGION: PETCLINIC_REGION
-
 phases:
   install:
     commands:
@@ -44,7 +31,7 @@ phases:
       - echo Deployment started on $(date)
       - helm list -n $ENVIRONMENT
       - echo Upgrading the Helm chart...
-      - helm upgrade --install spring-api-gateway-${ENVIRONMENT} charts/ --values charts/helm_values/values-${ENVIRONMENT}.yaml -n $ENVIRONMENT
+      - helm upgrade --install carts-${ENVIRONMENT} microservice/ --values microservice/values-${ENVIRONMENT}.yaml -n $ENVIRONMENT
 
   post_build:
     commands:
