@@ -1,5 +1,5 @@
 # Namespace where the application will be deployed
-namespace: "dev"
+namespace: "sock-shop"
 
 
 carts:
