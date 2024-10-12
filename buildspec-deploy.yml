@@ -31,7 +31,7 @@ phases:
       - echo Deployment started on $(date)
       - helm list -n $ENVIRONMENT
       - echo Upgrading the Helm chart...
-      - helm upgrade --install carts charts/microservice/ --values charts/microservice/values-${ENVIRONMENT}.yaml -n $ENVIRONMENT
+      - helm upgrade --install carts charts/helm-values --values charts/helm-values/values-${ENVIRONMENT}.yaml -n $ENVIRONMENT
 
   post_build:
     commands:
