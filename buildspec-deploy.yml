@@ -8,6 +8,7 @@ phases:
       #- export AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY
       #- export AWS_DEFAULT_REGION=$REGION
       #- export AWS_DEFAULT_OUTPUT="json"
+      - export ENVIRONMENT=$ENVIRONMENT
       - chmod +x ./scripts/setup_k8s_tools.sh
       - ./scripts/setup_k8s_tools.sh
 
@@ -17,6 +18,7 @@ phases:
       - echo "Install completed on" `date`
       - echo "Connecting to EKS cluster:" $CLUSTER_NAME
       - aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME
+      - echo ${ENVIRONMENT}
       - echo "Checking if Kubernetes namespace exists (${ENVIRONMENT})"
       - |
         if kubectl get namespaces | grep $ENVIRONMENT; then
