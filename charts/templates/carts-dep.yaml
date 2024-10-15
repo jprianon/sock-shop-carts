@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: carts
-        image: {{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.carts.image.repo }}:{{ .Values.carts.image.tag }}
+        image: 715841363614.dkr.ecr.eu-west-1.amazonaws.com/sock-shop-carts:latest #{{ if .Values.global.registry }}{{ .Values.global.registry }}/{{ end }}{{ .Values.carts.image.repo }}:{{ .Values.carts.image.tag }}
         command:
           - /usr/local/bin/java.sh
           - -jar
